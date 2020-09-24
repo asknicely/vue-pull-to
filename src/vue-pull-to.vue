@@ -417,6 +417,13 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .vue-pull-to-wrapper > .scroll-container {
+          flex: 1 1 auto;
+          max-height: inherit;
+      }
+  }
+
   .vue-pull-to-wrapper > .scroll-container > .bottom-filler {
     height: 0px;
   }
