@@ -204,7 +204,10 @@
               bs.setProperty('transform', `translate(0, ${b}px)`);
               const fs = f.style;
               fs.setProperty('height', `${-b}px`);
-              this.$refs['scroll-container'].scrollTop -= b;
+              const el = this.$refs['scroll-container'];
+              if(el) {
+                this.$refs['scroll-container'].scrollTop -= b;
+              }
 
               const tdur = '200ms';
               const tdelay = `${c.loadedStayTime}ms`;
@@ -260,7 +263,7 @@
         this.beforeDiff = this.diff;
         const sc = this.$refs['scroll-container'];
         this.shouldPullDown =
-          this.isTopBounce && sc.scrollTop === 0;
+          this.isTopBounce && (sc ? sc.scrollTop === 0 : false);
         this.shouldPullUp =
           this.isBottomBounce && this.checkBottomReached();
         this.shouldPassThroughEvent = false;
@@ -350,6 +353,9 @@
 
       updateTouchSensitivity(flag) {
         const el = this.$refs['scroll-container'];
+        if(!el) {
+          return;
+        }
         if (flag) {
           el.addEventListener('touchstart', this.handleTouchStart, PASSIVE_OPTS);
           el.addEventListener('touchmove', this.handleTouchMove);
@@ -363,6 +369,9 @@
 
       updateScrollSensitivity(flag) {
         const el = this.$refs['scroll-container'];
+        if(!el) {
+          return;
+        }
         if (flag) {
           el.addEventListener('scroll', this.handleScroll, PASSIVE_OPTS);
         } else {
