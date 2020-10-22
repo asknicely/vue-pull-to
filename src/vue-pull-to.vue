@@ -252,7 +252,7 @@
 
       checkBottomReached() {
         const el = this.$refs['scroll-container'];
-        return el.scrollTop + el.offsetHeight + 1 >= el.scrollHeight;
+        return el ? el.scrollTop + el.offsetHeight + 1 >= el.scrollHeight : false;
       },
 
       handleTouchStart(event) {
