@@ -205,7 +205,7 @@
               const fs = f.style;
               fs.setProperty('height', `${-b}px`);
               const el = this.$refs['scroll-container'];
-              if(el) {
+              if (el) {
                 this.$refs['scroll-container'].scrollTop -= b;
               }
 
@@ -353,7 +353,7 @@
 
       updateTouchSensitivity(flag) {
         const el = this.$refs['scroll-container'];
-        if(!el) {
+        if (!el) {
           return;
         }
         if (flag) {
@@ -369,7 +369,7 @@
 
       updateScrollSensitivity(flag) {
         const el = this.$refs['scroll-container'];
-        if(!el) {
+        if (!el) {
           return;
         }
         if (flag) {
