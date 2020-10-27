@@ -767,7 +767,12 @@ function getMessageByState(config, state) {
             bs.setProperty('transform', "translate(0, ".concat(b, "px)"));
             var fs = f.style;
             fs.setProperty('height', "".concat(-b, "px"));
-            this.$refs['scroll-container'].scrollTop -= b;
+            var el = this.$refs['scroll-container'];
+
+            if (el) {
+              this.$refs['scroll-container'].scrollTop -= b;
+            }
+
             var tdur = '200ms';
             var tdelay = "".concat(c.loadedStayTime, "ms");
             setTransition(bs, 'transform', tdur, tdelay);
@@ -817,7 +822,7 @@ function getMessageByState(config, state) {
     },
     checkBottomReached: function checkBottomReached() {
       var el = this.$refs['scroll-container'];
-      return el.scrollTop + el.offsetHeight + 1 >= el.scrollHeight;
+      return el ? el.scrollTop + el.offsetHeight + 1 >= el.scrollHeight : false;
     },
     handleTouchStart: function handleTouchStart(event) {
       var _event$touches = slicedToArray_default()(event.touches, 1);
@@ -827,7 +832,7 @@ function getMessageByState(config, state) {
       this.startX = _event$touches$.clientX;
       this.beforeDiff = this.diff;
       var sc = this.$refs['scroll-container'];
-      this.shouldPullDown = this.isTopBounce && sc.scrollTop === 0;
+      this.shouldPullDown = this.isTopBounce && (sc ? sc.scrollTop === 0 : false);
       this.shouldPullUp = this.isBottomBounce && this.checkBottomReached();
       this.shouldPassThroughEvent = false;
     },
@@ -923,6 +928,10 @@ function getMessageByState(config, state) {
     updateTouchSensitivity: function updateTouchSensitivity(flag) {
       var el = this.$refs['scroll-container'];
 
+      if (!el) {
+        return;
+      }
+
       if (flag) {
         el.addEventListener('touchstart', this.handleTouchStart, PASSIVE_OPTS);
         el.addEventListener('touchmove', this.handleTouchMove);
@@ -935,6 +944,10 @@ function getMessageByState(config, state) {
     },
     updateScrollSensitivity: function updateScrollSensitivity(flag) {
       var el = this.$refs['scroll-container'];
+
+      if (!el) {
+        return;
+      }
 
       if (flag) {
         el.addEventListener('scroll', this.handleScroll, PASSIVE_OPTS);
