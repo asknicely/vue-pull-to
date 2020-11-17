@@ -18,6 +18,14 @@
           </router-link>
         </li>
         <li>
+          <router-link href="/bounce-scroll-with-horizontal-scrolling-section">
+            Bounce scroll with horizontal scrolling
+            <svg class="icon icon-arrow" aria-hidden="true">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+          </router-link>
+        </li>
+        <li>
           <router-link href="/simple-pullto-refresh">
             Simple pull to refresh
             <svg class="icon icon-arrow" aria-hidden="true">
