@@ -128,7 +128,6 @@
         state: '',
         shouldPullDown: false,
         shouldPullUp: false,
-        shouldPassThroughEvent: false,
         throttleEmitTopPull: null,
         throttleEmitBottomPull: null,
         throttleEmitScroll: null,
@@ -266,7 +265,6 @@
           this.isTopBounce && (sc ? sc.scrollTop === 0 : false);
         this.shouldPullUp =
           this.isBottomBounce && this.checkBottomReached();
-        this.shouldPassThroughEvent = false;
       },
 
       handleTouchMove(event) {
@@ -283,9 +281,8 @@
         this.distance = dist;
         // judge pan gesture direction, if not vertical just return
         // make sure that if some components embeded can handle horizontal pan gesture in here
-        let pe = this.shouldPassThroughEvent;
         if (Math.abs(clientY - startY) < Math.abs(clientX - startX)) {
-          this.shouldPassThroughEvent = pe = true;
+          return;
         }
 
         if (!(dist > 0 ? this.shouldPullDown : this.shouldPullUp)) {
@@ -293,10 +290,9 @@
           return;
         }
 
-        if (!pe) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+        event.preventDefault();
+        event.stopPropagation();
+
         this.scrollTo(dist, 0);
 
         let c;

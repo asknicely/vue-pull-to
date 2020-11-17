@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -101,11 +101,11 @@ return /******/ (function(modules) { // webpackBootstrap
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(9);
+var content = __webpack_require__(7);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var add = __webpack_require__(12).default
+var add = __webpack_require__(10).default
 var update = add("56ca1821", content, false, {});
 // Hot Module Replacement
 if(false) {}
@@ -118,12 +118,10 @@ var arrayWithHoles = __webpack_require__(3);
 
 var iterableToArrayLimit = __webpack_require__(4);
 
-var unsupportedIterableToArray = __webpack_require__(5);
-
-var nonIterableRest = __webpack_require__(7);
+var nonIterableRest = __webpack_require__(5);
 
 function _slicedToArray(arr, i) {
-  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
 }
 
 module.exports = _slicedToArray;
@@ -132,16 +130,16 @@ module.exports = _slicedToArray;
 /* 2 */
 /***/ (function(module, exports) {
 
-function _typeof(obj) {
-  "@babel/helpers - typeof";
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
     module.exports = _typeof = function _typeof(obj) {
-      return typeof obj;
+      return _typeof2(obj);
     };
   } else {
     module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
     };
   }
 
@@ -165,7 +163,6 @@ module.exports = _arrayWithHoles;
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
-  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
   var _arr = [];
   var _n = true;
   var _d = false;
@@ -195,49 +192,16 @@ module.exports = _iterableToArrayLimit;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayLikeToArray = __webpack_require__(6);
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
-}
-
-module.exports = _unsupportedIterableToArray;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
-  return arr2;
-}
-
-module.exports = _arrayLikeToArray;
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
 module.exports = _nonIterableRest;
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -247,17 +211,17 @@ module.exports = _nonIterableRest;
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_node_modules_less_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_pull_to_vue_vue_type_style_index_0_id_81faaf1a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(8)(false);
 // Module
 exports.push([module.i, ".vue-pull-to-wrapper[data-v-81faaf1a],\n.vue-pull-to-wrapper > .scroll-container[data-v-81faaf1a] {\n  padding: 0;\n  border: 0 none;\n  margin: 0;\n}\n.vue-pull-to-wrapper[data-v-81faaf1a] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  height: 100%;\n}\n.vue-pull-to-wrapper > .scroll-container[data-v-81faaf1a] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  overflow-x: hidden;\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {\n.vue-pull-to-wrapper > .scroll-container[data-v-81faaf1a] {\n    -webkit-box-flex: 1;\n    -webkit-flex: 1 1 auto;\n            flex: 1 1 auto;\n    max-height: inherit;\n}\n}\n.vue-pull-to-wrapper > .scroll-container > .bottom-filler[data-v-81faaf1a] {\n  height: 0px;\n}\n.vue-pull-to-wrapper > .action-block[data-v-81faaf1a] {\n  position: relative;\n  width: 100%;\n}\n.vue-pull-to-wrapper > .action-block > .default-text[data-v-81faaf1a] {\n  height: 100%;\n  line-height: 50px;\n  text-align: center;\n}\n.vue-pull-to-wrapper[data-v-81faaf1a],\n.vue-pull-to-wrapper > .action-block-bottom[data-v-81faaf1a],\n.vue-pull-to-wrapper > .scroll-container > .bottom-fill[data-v-81faaf1a] {\n  -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);\n          transition-timing-function: cubic-bezier(0, 0, 0, 1);\n}\n", ""]);
 
 
 
 /***/ }),
-/* 10 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -348,11 +312,10 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 11 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/vue-pull-to.vue?vue&type=template&id=81faaf1a&scoped=true&
@@ -681,7 +644,6 @@ function getMessageByState(config, state) {
       state: '',
       shouldPullDown: false,
       shouldPullUp: false,
-      shouldPassThroughEvent: false,
       throttleEmitTopPull: null,
       throttleEmitBottomPull: null,
       throttleEmitScroll: null,
@@ -834,7 +796,6 @@ function getMessageByState(config, state) {
       var sc = this.$refs['scroll-container'];
       this.shouldPullDown = this.isTopBounce && (sc ? sc.scrollTop === 0 : false);
       this.shouldPullUp = this.isBottomBounce && this.checkBottomReached();
-      this.shouldPassThroughEvent = false;
     },
     handleTouchMove: function handleTouchMove(event) {
       var _event$touches2 = slicedToArray_default()(event.touches, 1),
@@ -856,10 +817,8 @@ function getMessageByState(config, state) {
       this.distance = dist; // judge pan gesture direction, if not vertical just return
       // make sure that if some components embeded can handle horizontal pan gesture in here
 
-      var pe = this.shouldPassThroughEvent;
-
       if (Math.abs(clientY - startY) < Math.abs(clientX - startX)) {
-        this.shouldPassThroughEvent = pe = true;
+        return;
       }
 
       if (!(dist > 0 ? this.shouldPullDown : this.shouldPullUp)) {
@@ -867,11 +826,8 @@ function getMessageByState(config, state) {
         return;
       }
 
-      if (!pe) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-
+      event.preventDefault();
+      event.stopPropagation();
       this.scrollTo(dist, 0);
       var c;
 
@@ -985,7 +941,7 @@ function getMessageByState(config, state) {
 // CONCATENATED MODULE: ./src/vue-pull-to.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_vue_pull_tovue_type_script_lang_js_ = (vue_pull_tovue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./src/vue-pull-to.vue?vue&type=style&index=0&id=81faaf1a&scoped=true&lang=css&
-var vue_pull_tovue_type_style_index_0_id_81faaf1a_scoped_true_lang_css_ = __webpack_require__(8);
+var vue_pull_tovue_type_style_index_0_id_81faaf1a_scoped_true_lang_css_ = __webpack_require__(6);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -1052,12 +1008,7 @@ function normalizeComponent (
     options._ssrRegister = hook
   } else if (injectStyles) {
     hook = shadowMode
-      ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
       : injectStyles
   }
 
@@ -1066,7 +1017,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functional component in vue file
+      // register for functioal component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -1116,15 +1067,11 @@ component.options.__file = "src/vue-pull-to.vue"
 /* harmony default export */ var src = __webpack_exports__["default"] = (vue_pull_to);
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ addStylesClient; });
 
 // CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
 /**
@@ -1156,6 +1103,7 @@ function listToStyles (parentId, list) {
 }
 
 // CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesClient.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addStylesClient; });
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
